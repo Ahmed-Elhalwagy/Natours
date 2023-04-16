@@ -7,7 +7,7 @@ const handelCastErrorDB = (err) => {
 
 const handelDuplicateFieldsDB = (err) => {
   const value = err.errmsg.match(/(["'])(?:(?=(\\?))\2.)*?\1/);
-  // console.log(value);
+  // .log(value);
   const message = `Duplicate field value : ${value[0]}`;
   return new AppError(message, 400);
 };
@@ -74,7 +74,7 @@ module.exports = (err, req, res, next) => {
   // sendErrorProd(err, req, res);
   sendErrorDev(err, req, res);
 
-  // console.log(err);
+  // .log(err);
 };
 // if (err.isOperational) {
 //   sendErrorDev(err, res);

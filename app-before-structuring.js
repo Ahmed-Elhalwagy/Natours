@@ -24,7 +24,7 @@ app.use(express.json()); // use -> add a middleware to our middleware stack
 
 //route handlers --> Controllers
 const getAllTours = (req, res) => {
-  console.log(req.requestTime);
+  // console.log(req.requestTime);
   res.status(200).json({
     status: 'success',
     results: tours.length,
@@ -53,7 +53,7 @@ const getTour = (req, res) => {
 };
 
 const CreateTour = (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const newId = tours[tours.length - 1].id + 1;
   const newTour = Object.assign({ id: newId }, req.body);
 
@@ -88,7 +88,6 @@ const deleteTour = (req, res) => {
   const tourId = req.params.id * 1;
   const tour = tours.find((el) => el.id == req.params.tourId);
 
-  console.log('ddd');
   res.status(204).json({
     status: 'success',
     data: null,

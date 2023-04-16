@@ -9,6 +9,7 @@ const path = require('path');
 const ejs = require('ejs');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const compression = require('compression');
 
 const tourRouter = require('./routes/tourRoutes.js');
 const userRouter = require('./routes/userRoutes.js');
@@ -72,6 +73,8 @@ app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
   next();
 });
+
+app.use(compression());
 
 //test Middleware
 app.use((req, res, next) => {

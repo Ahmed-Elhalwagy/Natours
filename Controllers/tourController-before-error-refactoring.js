@@ -38,7 +38,6 @@ exports.getAllTours = async (req, res) => {
       status: 'Fail',
       message: err,
     });
-    console.log(err);
   }
 };
 
@@ -154,7 +153,6 @@ exports.getTourStats = async (req, res) => {
       status: 'Fail',
       message: err,
     });
-    console.log(err);
   }
 };
 
@@ -195,7 +193,6 @@ exports.getMonthlyPlane = async (req, res) => {
       status: 'Fail',
       message: err,
     });
-    console.log(err);
   }
 };
 

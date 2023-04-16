@@ -23,12 +23,12 @@ class APIFeatures {
     let queryObj = { ...this.queryString };
     excludedFields = ['page', 'sort', 'limit', 'fields']; // we don't want this propertyes to be in our query because we will use them later
     excludedFields.forEach((el) => delete queryObj[el]);
-    console.log(queryObj);
+    // console.log(queryObj);
 
     // 2)Advanced Filtering for (gt gte lt lte)
     let queryStr = JSON.stringify(queryObj);
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`); // to add th $ to gte lte .....
-    console.log(JSON.parse(queryStr));
+    // console.log(JSON.parse(queryStr));
   }
 }
 
@@ -40,12 +40,12 @@ exports.getAllTours = async (req, res) => {
     let queryObj = { ...req.query };
     excludedFields = ['page', 'sort', 'limit', 'fields']; // we don't want this propertyes to be in our query because we will use them later
     excludedFields.forEach((el) => delete queryObj[el]);
-    console.log(queryObj);
+    // console.log(queryObj);
 
     // 2)Advanced Filtering for (gt gte lt lte)
     let queryStr = JSON.stringify(queryObj);
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`); // to add th $ to gte lte .....
-    console.log(JSON.parse(queryStr));
+    // console.log(JSON.parse(queryStr));
 
     // 2.mongoose special methods in filteration
     // const query = Tour.find()

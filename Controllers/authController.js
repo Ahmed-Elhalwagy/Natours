@@ -48,7 +48,7 @@ const createSendToken = (user, statusCode, res) => {
 exports.signup = catchAsync(async (req, res, next) => {
   const newUser = await User.create(req.body);
   const url = `${req.protocol}://${req.get('host')}/me`;
-  console.log(url);
+  // console.log(url);
   // await new Email(newUser, url).sendWelcome();
   createSendToken(newUser, 201, res);
 });
@@ -100,7 +100,7 @@ exports.protect = catchAsync(async (req, res, next) => {
   // 2) Verification token
   // we promisify jwt.verify because it returns promise so we can use await with it
   const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
-  console.log(decoded);
+  // console.log(decoded);
   // jwt.verify(token, process.env.JWT_SECRET, function (err, decoded) {
   //   console.log(decoded);
   // });
@@ -195,7 +195,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
     'host'
   )}/api/v1/users/resetPassword/${resetToken}`;
 
-  console.log('Reset URL: ', resetURL);
+  // console.log('Reset URL: ', resetURL);
   const message = `Forgot your password? Submit a PATCH request with your new password and passwordConfirm to: ${resetURL}.\nIf you didn't forget your password, please ignore this email!`;
 
   try {

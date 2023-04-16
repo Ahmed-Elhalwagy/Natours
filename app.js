@@ -22,6 +22,7 @@ const globalErrorHnadler = require(`${__dirname}/Controllers/errorController.js`
 
 //Start express App
 const app = express();
+app.enable('trust proxy');
 
 // Setting The view Engine
 app.set('view engine', 'ejs');
@@ -34,6 +35,9 @@ const limiter = rateLimiting({
 });
 
 //GLOBAL middlewares
+app.use(core());
+
+app.options('*', cors()); // options is an http method (we do that to pervent the preflight phase)
 
 //set security HTTP HEADERS
 app.use(helmet());

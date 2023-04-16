@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <%- include('./head.ejs') %>
+  </head>
+  <%- include('./__header.ejs') %>
+  <main class="main">
+    <div class="error">
+      <div class="error-title">
+        <h2 class="heading-secondart heading-secondary--error">
+          Uh oh! Something went wrong!
+        </h2>
+        <h2 class="error__emoji">😢 🤯</h2>
+      </div>
+      <div class="error__msg"><%= msg %></div>
+    </div>
+  </main>
+  <%- include('./__footer.ejs') %>
+</html>

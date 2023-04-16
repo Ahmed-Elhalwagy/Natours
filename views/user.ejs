@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <%- include('./head')  %>
+    </head>
+        <body>    
+        <%- include("./__header")  %>
+        <main class="main">
+            <div class="user-view">
+                <nav class="user-view__menu">
+                    <ul class="side-nav">
+                        <li class="side-nav--active">
+                            <a href="#">
+                                <svg>
+                                    <use xlink:href='img/icons.svg#icon-settings'></use>
+                                </svg>
+                                Settings
+                            </a>
+                        </li>
+                        <li >
+                            <a href="#">
+                                <svg>
+                                    <use xlink:href='img/icons.svg#icon-briefcase'></use>
+                                </svg>
+                                My bookings
+                            </a>
+                        </li>
+                        <li >
+                            <a href="#">
+                                <svg>
+                                    <use xlink:href='img/icons.svg#icon-star'></use>
+                                </svg>
+                                My Reviews
+                            </a>
+                        </li>
+                        <li >
+                            <a href="#">
+                                <svg>
+                                    <use xlink:href='img/icons.svg#icon-credit-card'></use>
+                                </svg>
+                                Billing
+                            </a>
+                        </li>
+                            </a>
+                    </ul>
+                    <div class="admin-nav">
+                        <h5 class="admin-nav__heading">Admin</h5>
+                        <ul class="side-nav">
+                            <li>
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href='img/icons.svg#icon-map'></use>
+                                    </svg>
+                                    Mangae Tours
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href='img/icons.svg#icon-users'></use>
+                                    </svg>
+                                    Mangae Users
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href='img/icons.svg#icon-star'></use>
+                                    </svg>
+                                    Mangae Reviews
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href='img/icons.svg#icon-briefcase'></use>
+                                    </svg>
+                                    Mangae Bookings
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="user-view__content">
+                    <div class="user-view__form-container">
+                        <h2 class="heading-secondary ma-bt-md"form--login> Your account settings</h2>
+                        <!-- Without API using form action -->
+                        <!-- <form action="/submit-user-data" method="POST" class="form form-user-data"> -->
+                        <!-- using API request -->
+                        <form class="form form-user-data">
+                            <div class="form form__group">
+                                <label for="name" class="form__label">Name</label>
+                                <input type='text', value='<%= user.name  %>', placeholder="Enter Your New Name" required id="name" class="form__input" name="name">
+                            </div>
+                            <div class="form__group ma-bt-md">
+                                <label for="email" class="form__label">Email Adress</label>
+                                <input type='email', value='<%= user.email  %>', placeholder="Enter Your New Email" required id="email" class="form__input" name="email">
+                            </div>
+                            <div class="form__group form__photo-upload">
+                                <img src='/img/users/<%= user.photo %>', alt='User photo' class="form__user-photo">
+                                <input type="file" accept="image/*" class="form__upload" id="photo" name="photo">
+                                <label for="photo">Choose new photo</label>
+                            </div>
+                            <div class="form__group right">
+                                <button class="btn btn--small btn--green">Save settings</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="line">&nbsp</div>
+                    <div class="user-view__form-container">
+                        <h2 class="heading-secondary ma-bt-md">Password change</h2>
+                        <form class="form form-user-password">
+                            <div class="form__group">
+                                <label for="password-current" class="form__label">Current password</label>
+                                <input type='password', placeholder='••••••••', required, minlength='8'id="password-current" class="form__input">
+                            </div>
+                            <div class="form__group">
+                                <label for="password" class="form__label">New password</label>
+                                <input type='password', placeholder='••••••••', required, minlength='8'id="password" class="form__input">
+                            </div>
+                        <div class="form__group ma-bt-lg">
+                            <label for="password-confirm" class="form__label">Confirm password</label>
+                            <input type='password', placeholder='••••••••', required, minlength='8'id="password-confirm" class="form__input">
+                        </div>
+                        <div class="form__group right">
+                            <button class="btn btn--small btn--green btn-save-password">Save password</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include('./__footer')  %>
+    </body>
+</html>

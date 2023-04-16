@@ -1,0 +1,49 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "debug": "ndb server.js",
+    "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundel.js --public-url .",
+    "build:js": "parcel build ./public/js/index.js --out-dir ./public/js --out-file bundel.js --public-url ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@stripe/stripe-js": "^1.52.1",
+    "@types/stripe-checkout": "^1.0.4",
+    "@types/stripe-v3": "^3.1.28",
+    "axios": "^1.3.4",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^6.7.0",
+    "helmet": "^6.0.1",
+    "hpp": "^0.2.3",
+    "html-to-text": "^9.0.5",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.9.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.1",
+    "pug": "^3.0.2",
+    "sharp": "^0.32.0",
+    "slugify": "^1.6.5",
+    "stripe": "^12.1.1",
+    "stripe-client": "^1.1.5",
+    "validator": "^13.9.0",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1"
+  }
+}

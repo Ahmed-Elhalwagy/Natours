@@ -36,6 +36,7 @@ const limiter = rateLimiting({
 
 //GLOBAL middlewares
 app.use(core());
+//Access-Control-Allo-Origin (hrader)
 
 app.options('*', cors()); // options is an http method (we do that to pervent the preflight phase)
 
